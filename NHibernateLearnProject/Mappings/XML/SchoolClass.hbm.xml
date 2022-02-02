@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2"
+                   auto-import="true"
+                   assembly = "NHibernateLearnProject" namespace = "NHibernateLearnProject.Entities">
+
+    <class name = "SchoolClass" batch-size="25">
+        <id name = "Id">
+            <generator class = "guid.native"/>
+        </id>
+
+        <property name = "ClassTitle"/>
+        
+        <bag name="Students" inverse="true"
+             lazy="true" batch-size="25"
+             cascade="all-delete-orphan">
+            <key column="SchoolClassId"/>
+            <one-to-many class="Student"/>
+        </bag>
+     </class>
+
+</hibernate-mapping>
