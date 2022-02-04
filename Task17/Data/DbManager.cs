@@ -17,7 +17,7 @@ namespace Task17.Data
             {
                 NameValueCollection properties = new NameValueCollection();
                 properties["configType"] = "FILE";
-                properties["configFile"] = "~/NLog.config";
+                properties["configFile"] = "~\\NLog.config";
                 LogManager.Adapter = new NLogLoggerFactoryAdapter(properties);
                 // XML - SQLite
                 var configuration = new Configuration();
