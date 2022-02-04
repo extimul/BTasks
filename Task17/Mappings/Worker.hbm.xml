@@ -1,0 +1,15 @@
+﻿<?xml version = "1.0" encoding = "utf-8" ?>
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2" 
+                   assembly = "Task17"
+                   namespace = "Task17.Models">
+    <class name = "Worker" table = "workers">
+        <id name = "Id">
+            <generator class = "guid.native"/>
+        </id>
+        <property name = "Name"/>
+        <property name = "Login"/>
+        <property name = "Salary"/>
+        <property name = "Age"/>
+        <property name = "Date" type = "DateTime"/>
+    </class>
+</hibernate-mapping>

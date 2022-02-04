@@ -1,22 +1,24 @@
 ﻿using Task17.Data;
 
-namespace Task17;
-
-public class Program
+namespace Task17
 {
-    private static void Main(string[] args)
+    public class Program
     {
-        DbInitializer.Run();
-        
-        var instance = Activator.CreateInstance(typeof(Tasks));
-        var methods = typeof(Tasks).GetMethods();
-        
-        foreach (var method in methods)
+        private static void Main(string[] args)
         {
-            if (method.Name.Contains("Task"))
-                method.Invoke(instance, null);
-        }
+            DbInitializer.Run();
+        
+            var instance = Activator.CreateInstance(typeof(Tasks));
+            var methods = typeof(Tasks).GetMethods();
+        
+            foreach (var method in methods)
+            {
+                if (method.Name.Contains("Task"))
+                    method.Invoke(instance, null);
+            }
 
-        Console.ReadKey();
+            Console.ReadKey();
+        }
     }
 }
+

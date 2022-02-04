@@ -1,15 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Common.Logging" Version="3.4.1" />
+      <PackageReference Include="Common.Logging.NLog41" Version="3.4.1" />
       <PackageReference Include="FluentNHibernate" Version="3.1.0" />
       <PackageReference Include="NHibernate" Version="5.3.10" />
+      <PackageReference Include="NHibernate.Logging.CommonLogging" Version="5.3.10" />
+      <PackageReference Include="NLog" Version="4.7.13" />
+      <PackageReference Include="NLog.Config" Version="4.7.13" />
       <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
     </ItemGroup>
 
@@ -18,5 +23,13 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
-
+    
+    <ItemGroup>
+      <None Remove="Mappings\Worker.hbm.xml" />
+      <EmbeddedResource Include="Mappings\Worker.hbm.xml" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Content Remove="C:\Users\extim\.nuget\packages\nhibernate.logging.commonlogging\5.3.10\contentFiles\any\netstandard2.0\App.config.transform" />
+    </ItemGroup>
 </Project>
