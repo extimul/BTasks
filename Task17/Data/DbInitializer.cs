@@ -5,6 +5,8 @@ namespace Task17.Data
 {
     public static class DbInitializer
     {
+        private static Company Company = new("Intel");
+
         private static IList<Worker> Workers = new List<Worker>()
         {
             new("Дмитрий", "dmitriy_user", 25000, 44, new DateTime(2010, 1,13)),
@@ -40,19 +42,18 @@ namespace Task17.Data
                 Console.WriteLine($"Добавляем рабочего - {worker.Login}");
                 session.Save(worker);
             }
+
+            foreach (var worker in Workers)
+            {
+                Company.AddWorker(worker);
+            }
+            
+            session.SaveOrUpdate(Company);
     
             transaction.Commit();
                 
             Console.WriteLine("Данные успешно добавлены");
         }
-        //
-        // public static async Task DeleteDataAsync()
-        // {
-        //     var session = DbManager.OpenSession();
-        //     await session.Query<Worker>().DeleteAsync();
-        //     
-        //     Console.WriteLine("Данные успешно удалены");
-        // }
     }
 }
 

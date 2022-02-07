@@ -19,7 +19,7 @@ namespace Task17.Data
                 properties["configType"] = "FILE";
                 properties["configFile"] = "~\\NLog.config";
                 LogManager.Adapter = new NLogLoggerFactoryAdapter(properties);
-                // XML - SQLite
+                
                 var configuration = new Configuration();
                 configuration.Configure("Configuration\\hibernate.cfg.xml");
                 configuration.AddAssembly(typeof(Program).Assembly);

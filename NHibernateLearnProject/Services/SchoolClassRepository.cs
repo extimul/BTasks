@@ -57,4 +57,25 @@ public static class SchoolClassRepository
         var session = DbManager.OpenSession();
         return await session.Query<SchoolClass>().ToListAsync();
     }
+
+    public static void Task19()
+    {
+        var session = DbManager.OpenSession();
+
+        var students =
+            session.Query<Student>()
+                .Where(x => x.SchoolClass.ClassTitle.Like("1%"))
+                .Where(x =>
+                    session.Query<Student>()
+                        .Where(student => student.FirstName.Like("I%"))
+                        .Select(student => student.FirstName)
+                        .Contains(x.FirstName))
+                .ToList();
+
+        foreach (var student in students)
+        {
+            Console.WriteLine($"{student.FirstName} {student.LastName}");
+        }
+
+    }
 }

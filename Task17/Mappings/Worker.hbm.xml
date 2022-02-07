@@ -11,5 +11,7 @@
         <property name = "Salary"/>
         <property name = "Age"/>
         <property name = "Date" type = "DateTime"/>
+        
+        <many-to-one name="Company" column="CompanyId"/>
     </class>
 </hibernate-mapping>

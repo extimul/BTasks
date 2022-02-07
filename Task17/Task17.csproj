@@ -31,6 +31,8 @@
     <ItemGroup>
       <None Remove="Mappings\Worker.hbm.xml" />
       <EmbeddedResource Include="Mappings\Worker.hbm.xml" />
+      <None Remove="Mappings\Company.hbm.xml" />
+      <EmbeddedResource Include="Mappings\Company.hbm.xml" />
     </ItemGroup>
     
     <ItemGroup>

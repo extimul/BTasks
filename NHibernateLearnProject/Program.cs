@@ -19,8 +19,10 @@ class Program
         // Console.WriteLine(new string('-', 60));
         // await DisplayAllSchoolClasses();
 
-        var a1 = SchoolClassRepository.GetByName("1a");
-        Console.WriteLine(a1?.ClassTitle);
+        // var a1 = SchoolClassRepository.GetByName("1a");
+        // Console.WriteLine(a1?.ClassTitle);
+        
+        SchoolClassRepository.Task19();
     }
 
     private static async Task AddNewClass()

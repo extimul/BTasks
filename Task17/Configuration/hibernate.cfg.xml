@@ -2,7 +2,7 @@
 <hibernate-configuration xmlns = "urn:nhibernate-configuration-2.2">
     <session-factory>
         <property name="connection.connection_string">
-            Data Source=task18.db;
+            Data Source=task19.db;
             DateTimeFormatString=yyyy-MM-dd HH:mm:ss.FFFFFFF;
         </property>
         <property name="connection.driver_class">NHibernate.Driver.SQLite20Driver</property>

@@ -13,6 +13,8 @@
         public virtual int Age { get; set; }
     
         public virtual DateTime Date { get; set; }
+        
+        public virtual Company Company { get; set; }
 
         public Worker() {}
     
